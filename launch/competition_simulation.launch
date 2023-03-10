@@ -8,8 +8,9 @@
   <arg name="debug" default="false" />
   <arg name="physics" default="ode" />
   <arg name="verbose" default="true" />
+  <arg name="reset" default="true" />
 
-    <!-- supply this argument to specify the world name within the worlds folder -->
+  <!-- supply this argument to specify the world name within the worlds folder -->
   <arg name="world_name" default="test" />
 
   <!-- set use_sim_time flag -->
@@ -26,6 +27,8 @@
   <arg     if="$(arg verbose)" name="command_arg3" value="--verbose" />
   <arg unless="$(arg debug)" name="script_type" value="gzserver" />
   <arg     if="$(arg debug)" name="script_type" value="debug" />
+
+
 
   <group if="$(eval arg('world_name') != 'test')">
     <arg name="world_file" default="$(find laser_competition_gazebo)/worlds/competition.world" />
@@ -133,7 +136,16 @@
     -file $(find laser_competition_gazebo)/models/barcodeshelf/model.sdf -model barcode_shelf -x -1 -y -5 -z 0.012 -Y 1.57079632679"></node>
   </group>
 
-      <!-- start gazebo client -->
+
+  <!-- kill previous sessions of mavros, px4 and gazebo -->
+  <group if="$(arg reset)">
+    <node pkg="mrs_simulation" type="kill_previous_session.sh" name="kill_previous_session" output="screen" />
+  </group>
+
+  <!-- start spawner -->
+  <include file="$(find mrs_simulation)/launch/mrs_drone_spawner.launch" />
+  
+  <!-- start gazebo client -->
   <group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen" />
   </group>
