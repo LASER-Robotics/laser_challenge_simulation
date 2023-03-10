@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>laser_competition_gazebo</name>
-  <version>0.0.0</version>
-  <description>To Do</description>
+  <name>laser_challenge_gazebo</name>
+  <version>1.0.1</version>
+  <description>drone trials league sandbox pack</description>
   <maintainer email="avfs@academico.ufpb.br">Augusto Vinicius F de sales</maintainer>
   <maintainer email="wagnergarcia@cc.ci.ufpb.br">Wagner D Garcia</maintainer>
 
-  <license>free of charge</license>
+  <license>apache_license_2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>rospy</build_depend>
