@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>laser_competition_gazebo</name>
+  <version>0.0.0</version>
+  <description>To Do</description>
+  <maintainer email="avfs@academico.ufpb.br">Augusto Vinicius F de sales</maintainer>
+  <maintainer email="wagnergarcia@cc.ci.ufpb.br">Wagner D Garcia</maintainer>
+
+  <license>free of charge</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <depend>gazebo</depend>
+  <depend>gazebo_ros</depend>
+  <depend>px4</depend>
+  <depend>mavlink_sitl_gazebo</depend>
+  <depend>mrs_gazebo_common_resources</depend>
+
+  <export>
+    <!-- gazebo_ros_paths_plugin automatically adds these to
+      GAZEBO_PLUGIN_PATH and GAZEBO_MODEL_PATH when you do this export inside
+      the package.xml file. You can than use URIs of type model://my_package/stuff. -->
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>
