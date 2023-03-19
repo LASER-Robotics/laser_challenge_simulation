@@ -124,7 +124,13 @@
     <node name="spawn_landing_platform_8" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
     -file $(find laser_challenge_gazebo)/models/landing_platform/model.sdf -model landing_platform_8 -x -1.5 -y 5.5 -z 0"></node>
 
-    <node name="spawn_qrcode_box_1" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
+    <node name="spawn_suspended_landing_platform_1" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
+    -file $(find laser_challenge_gazebo)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_1 -x -1.5 -y 0 -z 0.75"></node>
+
+    <node name="spawn_suspended_landing_platform_2" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
+    -file $(find laser_challenge_gazebo)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_2 -x 1.5 -y 0 -z 0.375"></node>
+
+    <!-- <node name="spawn_qrcode_box_1" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
     -file $(find laser_challenge_gazebo)/models/qrcode_box_a/model.sdf -model box_1 -x 0 -y 4 -z 1"></node>
 
     <node name="spawn_qrcode_box_2" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
@@ -137,13 +143,13 @@
     -file $(find laser_challenge_gazebo)/models/qrcode_box_d/model.sdf -model box_4 -x 1.5 -y 5.5 -z 1"></node>
 
     <node name="spawn_qrcode_box_5" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
-    -file $(find laser_challenge_gazebo)/models/qrcode_box_e/model.sdf -model box_5 -x -1.5 -y 5.5 -z 1"></node>
+    -file $(find laser_challenge_gazebo)/models/qrcode_box_e/model.sdf -model box_5 -x -1.5 -y 5.5 -z 1"></node> -->
 
     <node name="spawn_barcode_box_a0" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
     -file $(find laser_challenge_gazebo)/models/codebar_box_a0/model.sdf -model box_a0 -x 3 -y 0 -z 1"></node>
 
-    <node name="barcode_shelf_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
-    -file $(find laser_challenge_gazebo)/models/barcode_shelf/model.sdf -model barcode_shelf -x 1.5 -y -5 -z 0.012 -Y 1.57079632679"></node>
+    <!-- <node name="barcode_shelf_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
+    -file $(find laser_challenge_gazebo)/models/barcode_shelf/model.sdf -model barcode_shelf -x 1.5 -y -5 -z 0.012 -Y 1.57079632679"></node> -->
   </group>
 
   <!-- kill previous sessions of mavros, px4 and gazebo -->
