@@ -12,6 +12,7 @@
           <iyz>0</iyz>
           <izz>0.166667</izz>
         </inertia>
+        <pose>0 0 0 0 -0 0</pose>
       </inertial>
       <self_collide>0</self_collide>
       <enable_wind>0</enable_wind>
@@ -32,12 +33,11 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>100</max_contacts>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://landing_platform/meshes/landing_platforms.obj</uri>
-            <scale>1 1 1</scale>
-          </mesh>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
         </geometry>
         <surface>
           <friction>

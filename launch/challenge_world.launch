@@ -28,8 +28,11 @@
   <arg unless="$(arg debug)" name="script_type" value="gzserver" />
   <arg if="$(arg debug)" name="script_type" value="debug" />
 
+  <!-- worlds Simulation Stage -->
   <group if="$(eval arg('challenge_stage') != 'camera_test')">
     <arg name="world_file" default="$(find laser_challenge_gazebo)/worlds/challenge.world" />
+
+    <!-- Spawn landing platform in stage one and two -->
 
     <group if="$(eval arg('challenge_stage') == 'stage_one' or arg('challenge_stage') == 'stage_two')">
       <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="false" output="screen"
@@ -44,6 +47,8 @@
       <node name="spawn_landing_platform_3" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
       -file $(find laser_challenge_gazebo)/models/landing_platform/model.sdf -model landing_platform_3 -x 2 -y 3 -z 0"></node>
     </group>
+
+    <!-- Spawn Box in stage two -->
 
     <group if="$(eval arg('challenge_stage') == 'stage_two')">
       <node name="spawn_qrcode_box_1" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
@@ -62,6 +67,8 @@
       -file $(find laser_challenge_gazebo)/models/qrcode_box_e/model.sdf -model box_5 -x 8 -y 8 -z 1.97"></node>
     </group>
 
+    <!-- Spawn Bar Code Shelf in stage three -->
+
     <group if="$(eval arg('challenge_stage') == 'stage_three')">
       <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="false" output="screen"
         args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) -e $(arg physics) $(arg extra_gazebo_args) $(arg world_file)" />
@@ -69,6 +76,8 @@
       <node name="barcode_shelf_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
       -file $(find laser_challenge_gazebo)/models/barcode_shelf/model.sdf -model barcode_shelf -x 1 -y 3.5 -z 0.012"></node>
     </group>
+
+    <!-- Spawn robot l1br in stage four -->
 
     <group if="$(eval arg('challenge_stage') == 'stage_four')">
       <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="false" output="screen"
@@ -83,6 +92,8 @@
     </group>
   </group>
 
+  <!-- World Simulation Test -->
+
   <group if="$(eval arg('challenge_stage') == 'camera_test')">
     <arg name="world_file" default="$(find laser_challenge_gazebo)/worlds/camera_test.world" />
 
@@ -95,7 +106,7 @@
     <node name="spawn_landing_platform_2" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
     -file $(find laser_challenge_gazebo)/models/landing_platform/model.sdf -model landing_platform_2 -x 3 -y 0 -z 0"></node>
 
-    <node name="spawn_landing_platform_3" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
+    <node name="spawn_landing_platform_3" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf
     -file $(find laser_challenge_gazebo)/models/landing_platform/model.sdf -model landing_platform_3 -x -3 -y 0 -z 0"></node>
 
     <node name="spawn_landing_platform_4" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf 
