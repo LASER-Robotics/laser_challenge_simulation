@@ -1,25 +1,22 @@
-# laser_competition_simulation
+# The LASER Challenge Simulation repository
 
-## This pack contains the worlds related to the stages of the competition and a world where it is possible to perform a custom configuration of the world
+This package contains the Gazebo files (models and worlds) related to the LASER UAV challenge.
 
-### worlds list:
-    stage_one
-    stage_two
-    stage_three
-    stage_four
-    stage_test
+## Models
+- Arena
+- Banner
+- Barcode Shelf
+- Landing Platform
+- Measure Gas
+- Pipe
+- QR-Code Box
+- Green Sensor
+- Red Sensor
+- Unit Box
 
-### models list:
-    arena
-    banner
-    barcode_shelf
-    landing_platform
-    measure_gas
-    pipe
-    qrcode_boxs
-    sensor_green
-    sensor_red
-    unit_box
-
-### How to choose between worlds:
-    roslaunch laser_challenge_simulation challenge_world challenge_stage:= <the possible options are in "worlds list">
+## Worlds
+- Stage One
+- Stage Two
+- Stage Three
+- Stage Four
+- Test
