@@ -186,10 +186,10 @@
             </sphere>
           </geometry>
           <material>
-            <script>
+            <!-- <script>
               <uri>file://media/materials/scripts/Gazebo.material</uri>
               <name>Gazebo/Black</name>
-            </script>
+            </script> -->
           </material>
         </visual>
         <self_collide>0</self_collide>

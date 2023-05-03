@@ -25,7 +25,7 @@
           <sor>1.3</sor>
           <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
         </solver>
-        <constraints>z
+        <constraints>
           <cfm>0</cfm>
           <erp>0.2</erp>
           <contact_max_correcting_vel>1000</contact_max_correcting_vel>
@@ -107,34 +107,56 @@
     <!-- THE ARENA MODEL -->
       <include>
         <uri>model://arena_spawn</uri>
-        <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>1 1 0.0005 0 -0 0</pose>
+        <pose>1 1 0.0005 0 -0 0</pose>
       </include>
 
     <!-- THE LAND BASE MODEL 1 -->
-    <model name="land_base_1">
+    <model name="banner">
       <include>
-        <uri>model://land_base</uri>
-        <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>4 5 0 0 -0 0</pose>
+        <uri>model://banner</uri>
+        <pose>1.0 -0.6 0.29 3.14 -0 1.57</pose>
       </include>
     </model>
 
     <!-- THE LAND BASE MODEL 2 -->
-    <model name="land_base_2">
+    <model name="suspended_landing_platform_1">
         <include>
-          <uri>model://land_base</uri>
-            <!-- Pose ( x y z r p y ) -->
-          <pose frame=''>6 7 0 0 -0 0</pose>
+          <uri>model://suspended_landing_platform</uri>
+          <!-- <pose>8.0 8.0 0.40 0 -0 0</pose> -->
+          <pose>8.0 8.0 0.755 0 -0 0</pose>
+        </include>
+    </model>
+
+    <!-- THE LAND BASE MODEL 2 -->
+    <model name="suspended_landing_platform_2">
+        <include>
+          <uri>model://suspended_landing_platform</uri>
+          <pose>5.0 2.0 0.755 0 -0 0</pose>
+        </include>
+    </model>
+
+
+    <!-- THE LAND BASE MODEL 1 -->
+    <model name="landing_platform_1">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4 5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <!-- THE LAND BASE MODEL 2 -->
+    <model name="landing_platform_2">
+        <include>
+          <uri>model://landing_platform</uri>
+          <pose>6 7 0.005 0 -0 0</pose>
         </include>
     </model>
     
-      <!-- THE LAND BASE MODEL 3 -->
-    <model name="land_base_3">
+    <!-- THE LAND BASE MODEL 3 -->
+    <model name="landing_platform_3">
       <include>
-        <uri>model://land_base</uri>
-          <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>2 3 0 0 -0 0</pose>
+        <uri>model://landing_platform</uri>
+        <pose>2 3 0.005 0 -0 0</pose>
       </include>
     </model>
    
@@ -142,26 +164,26 @@
     <model name='the_void'>
       <static>1</static>
       <link name='link'>
-        <pose frame=''>0 0 0.1 0 -0 0</pose>
+        <pose>0 0 0.1 0 -0 0</pose>
         <visual name='the_void'>
-          <pose frame=''>0 0 2 0 -0 0</pose>
+          <pose>0 0 2 0 -0 0</pose>
           <geometry>
             <sphere>
               <radius>0.25</radius>
             </sphere>
           </geometry>
           <material>
-            <script>
+            <!-- <script>
               <uri>file://media/materials/scripts/Gazebo.material</uri>
               <name>Gazebo/Black</name>
-            </script>
+            </script> -->
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>-1000 -1000 0 0 0 0</pose>
+      <pose>-1000 -1000 0 0 0 0</pose>
     </model>
     <!--}-->
 
@@ -172,14 +194,5 @@
       </camera>
     </gui>
     <!--}-->
-
-    <!-- GUI frame synchronization {-->
-    <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so" >
-      <target_frame_id>gazebo_user_camera</target_frame_id>
-      <world_origin_frame_id>uav1/gps_origin</world_origin_frame_id>
-      <frame_to_follow>uav1::base_link</frame_to_follow>
-    </plugin>
-    <!--}-->
-
   </world>
 </sdf>

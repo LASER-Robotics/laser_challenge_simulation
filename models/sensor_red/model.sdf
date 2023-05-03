@@ -24,10 +24,10 @@
         </geometry>
         <material>
           <lighting>1</lighting>
-          <script>
+          <!-- <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/Red</name>
-          </script>
+          </script> -->
           <shader type='pixel'/>
         </material>
         <transparency>0</transparency>
