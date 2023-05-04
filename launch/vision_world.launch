@@ -1,0 +1,137 @@
+<launch>
+  <!-- these are the arguments you can pass this launch file, for example gui:=false -->
+  <arg name="paused" default="false" />
+  <arg name="use_sim_time" default="true" />
+  <arg name="extra_gazebo_args" default="" />
+  <arg name="gui" default="true" />
+  <arg name="headless" default="false" />
+  <arg name="debug" default="false" />
+  <arg name="physics" default="ode" />
+  <arg name="verbose" default="true" />
+  <arg name="reset" default="true" />
+
+  <!-- supply this argument to specify the world name within the worlds folder -->
+  <arg name="world_file"
+    default="$(find laser_challenge_simulation)/worlds/stage_vision.world" />
+
+  <!-- set use_sim_time flag -->
+  <group if="$(arg use_sim_time)">
+    <param name="/use_sim_time" value="true" />
+  </group>
+
+  <!-- set command arguments -->
+  <arg unless="$(arg paused)" name="command_arg1" value="" />
+  <arg if="$(arg paused)" name="command_arg1" value="-u" />
+  <arg unless="$(arg headless)" name="command_arg2" value="" />
+  <arg if="$(arg headless)" name="command_arg2" value="-r" />
+  <arg unless="$(arg verbose)" name="command_arg3" value="" />
+  <arg if="$(arg verbose)" name="command_arg3" value="--verbose" />
+  <arg unless="$(arg debug)" name="script_type" value="gzserver" />
+  <arg if="$(arg debug)" name="script_type" value="debug" />
+
+  <!-- SPAWN LANDING PLATFORM -->
+
+  <!-- Platform Start -->
+  <node name="spawn_landing_platform_1" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_1 -x 0 -y 0 -z 0.01"></node>
+
+  <!-- Platform Test Box -->
+  <node name="spawn_landing_platform_2" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_2 -x 3 -y 0 -z 0.01"></node>
+
+  <node name="spawn_landing_platform_3" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_3 -x -3 -y 0 -z 0.01"></node>
+
+  <node name="spawn_landing_platform_4" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_4 -x 0 -y 4 -z 0.01"></node>
+
+  <node name="spawn_landing_platform_5" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_5 -x 1.5 -y 2.5 -z 0.01"></node>
+
+  <node name="spawn_landing_platform_6" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_6 -x -1.5 -y 2.5 -z 0.01"></node>
+
+  <node name="spawn_landing_platform_7" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_7 -x 1.5 -y 5.5 -z 0.01"></node>
+
+  <node name="spawn_landing_platform_8" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/landing_platform/model.sdf -model landing_platform_8 -x -1.5 -y 5.5 -z 0.01"></node>
+
+  <!-- Suspended Platform -->
+
+  <node name="spawn_suspended_landing_platform_1" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_1 -x -1.5 -y 0 -z 1.5"></node>
+
+  <node name="spawn_suspended_landing_platform_2" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_2 -x 1.5 -y 0 -z 1.0"></node>
+
+  <node name="spawn_suspended_landing_platform_3" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_3 -x 0 -y -1 -z 0.10"></node>
+
+  <!-- BOX QRCODE -->
+
+  <node name="spawn_qrcode_box_1" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/qrcode_box_a/model.sdf -model box_1 -x 0 -y 4 -z 1"></node>
+
+  <node name="spawn_qrcode_box_2" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/qrcode_box_b/model.sdf -model box_2 -x -1.5 -y 2.5 -z 1"></node>
+
+  <node name="spawn_qrcode_box_3" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/qrcode_box_c/model.sdf -model box_3 -x 1.5 -y 2.5 -z 1"></node>
+
+  <node name="spawn_qrcode_box_4" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/qrcode_box_d/model.sdf -model box_4 -x 1.5 -y 5.5 -z 1"></node>
+
+  <node name="spawn_qrcode_box_5" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/qrcode_box_e/model.sdf -model box_5 -x -1.5 -y 5.5 -z 1"></node>
+
+  <!-- BOX BAR CODE -->
+
+  <node name="spawn_barcode_box_a0" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/codebar_box_a0/model.sdf -model box_a0 -x 0 -y -0.55 -z 0.2 -R -1.57 -P 0.0 -Y 0.0"></node>
+
+  <!-- BAR CODE SHELF -->
+  <!-- <node name="barcode_shelf_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/barcode_shelf/model.sdf -model barcode_shelf -x 1.5
+    -y -5 -z 0.012 -Y 1.57079632679"></node> -->
+
+  <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="false"
+    output="screen"
+    args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) -e $(arg physics) $(arg
+    extra_gazebo_args) $(arg world_file)" />
+
+  <!-- kill previous sessions of mavros, px4 and gazebo -->
+  <group if="$(arg reset)">
+    <node pkg="mrs_simulation" type="kill_previous_session.sh" name="kill_previous_session"
+      output="screen" />
+  </group>
+
+  <!-- start spawner -->
+  <include file="$(find mrs_simulation)/launch/mrs_drone_spawner.launch" />
+
+  <!-- start gazebo client -->
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen" />
+  </group>
+</launch>

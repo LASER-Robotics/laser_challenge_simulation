@@ -88,18 +88,24 @@
           </surface>
         </collision>
         <visual name="grass">
-          <pose>0 0 -0.001 -1.57079632679 0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <cast_shadows>false</cast_shadows>
           <geometry>
             <mesh>
-              <uri>model://grass_plane/meshes/grass_plane.obj</uri>
-              <scale>0.1 0.1 0.1</scale>
+              <uri>file://grass_plane/meshes/grass_plane.dae</uri>
             </mesh>
           </geometry>
+          <!-- <material> -->
+          <!--   <script> -->
+          <!--     <uri>file://media/materials/scripts/Gazebo.material</uri> -->
+          <!--     <name>Gazebo/Grass</name> -->
+          <!--   </script> -->
+          <!-- </material> -->
         </visual>
       </link>
     </model>
     <!--}-->
+
 
     <!-- THE VOID (for spawning objects out of camera view) {-->
     <model name='the_void'>
@@ -131,11 +137,14 @@
     <!-- user camera {-->
     <gui>
       <camera name="camera">
-        <pose>-5 0 5 0 0.78 0</pose>
+        <pose>-60 -100 30 0 0.4 0.89</pose>
       </camera>
     </gui>
     <!--}-->
 
+    <!-- gripper plugin  {-->
+    <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
+    <!-- } -->
     <!-- GUI frame synchronization {-->
     <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so">
       <target_frame_id>gazebo_user_camera</target_frame_id>
@@ -143,6 +152,9 @@
       <frame_to_follow>uav1::base_link</frame_to_follow>
     </plugin>
     <!--}-->
+
+    <!-- Models Worlds -->
+
 
   </world>
 </sdf>
