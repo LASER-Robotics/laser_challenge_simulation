@@ -12,7 +12,8 @@
 
   <!-- supply this argument to specify the world name within the worlds folder -->
   <arg name="challenge_stage" default="stage_one" />
-  <arg name="world_file" default="$(find laser_challenge_simulation)/worlds/stage_one.world" />
+  <arg name="world_file"
+    default="$(find laser_challenge_simulation)/worlds/$(arg challenge_stage).world" />
 
   <!-- set use_sim_time flag -->
   <group if="$(arg use_sim_time)">
@@ -31,17 +32,8 @@
 
   <!-- worlds Simulation Stage -->
   <group if="$(eval arg('challenge_stage') != 'camera_test')">
-    <group if="$(eval arg('challenge_stage') == 'stage_two')">
-      <arg name="world_file" value="$(find laser_challenge_simulation)/worlds/stage_two.world" />
-    </group>
-
-    <group if="$(eval arg('challenge_stage') == 'stage_three')">
-      <arg name="world_file" value="$(find laser_challenge_simulation)/worlds/stage_three.world" />
-    </group>
 
     <group if="$(eval arg('challenge_stage') == 'stage_four')">
-      <arg name="world_file" value="$(find laser_challenge_simulation)/worlds/stage_four.world" />
-
       <include file="$(find robot_description)/launch/spawn.launch">
         <arg name="x" value="5" />
         <arg name="y" value="5" />
