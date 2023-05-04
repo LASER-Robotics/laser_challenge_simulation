@@ -1,15 +1,15 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version="1.5">
   <world name="default">
-    <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin" filename="libmrs_gazebo_ros_link_attacher.so"/> -->
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin" filename="libMRSGazeboStaticTransformRepublisher.so"/>
-      
+    <plugin name="mrs_gazebo_static_transform_republisher_plugin"
+      filename="libMRSGazeboStaticTransformRepublisher.so" />
+
     <!-- coordinate system {-->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>37.411802</latitude_deg>
-      <longitude_deg>-121.995739</longitude_deg>
+      <latitude_deg>47.397743</latitude_deg>
+      <longitude_deg>8.545594</longitude_deg>
       <elevation>0.0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
@@ -39,29 +39,31 @@
     </physics>
     <!--}-->
 
-    <!-- turn off shadows {-->
+    <!-- setup shadows {-->
     <scene>
       <shadows>false</shadows>
       <sky>
-        <clouds/>
+        <clouds />
       </sky>
     </scene>
     <!--}-->
 
     <!-- sun {-->
-    <light type="directional" name="sun">
-      <cast_shadows>true</cast_shadows>
-      <pose>250 250 600 0 0 0</pose>
-      <diffuse>0.8 0.8 0.8 1</diffuse>
-      <specular>0.2 0.2 0.2 1</specular>
+
+    <light name='sun' type='directional'>
+      <pose frame=''>0 0 1000 0.4 0.2 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
       <attenuation>
-        <range>1000</range>
-        <constant>0.9</constant>
+        <range>20</range>
+        <constant>0.5</constant>
         <linear>0.01</linear>
         <quadratic>0.001</quadratic>
       </attenuation>
-      <direction>0 0 -1</direction>
+      <cast_shadows>1</cast_shadows>
     </light>
+
     <!--}-->
 
     <!-- ground plane {-->
@@ -93,98 +95,44 @@
               <uri>file://grass_plane/meshes/grass_plane.dae</uri>
             </mesh>
           </geometry>
-          <!-- <material> -->
-          <!--   <script> -->
-          <!--     <uri>file://media/materials/scripts/Gazebo.material</uri> -->
-          <!--     <name>Gazebo/Grass</name> -->
-          <!--   </script> -->
-          <!-- </material> -->
         </visual>
       </link>
     </model>
     <!--}-->
 
-    <!-- THE ARENA MODEL -->
-      <include>
-        <uri>model://arena_spawn</uri>
-        <pose>1 1 0.0005 0 -0 0</pose>
-      </include>
-
-    <!-- THE LAND BASE MODEL 1 -->
-    <model name="banner">
-      <include>
-        <uri>model://banner</uri>
-        <pose>1.0 -0.6 0.29 3.14 -0 1.57</pose>
-      </include>
-    </model>
-
-    <!-- THE LAND BASE MODEL 2 -->
-    <model name="suspended_landing_platform_1">
-        <include>
-          <uri>model://suspended_landing_platform</uri>
-          <!-- <pose>8.0 8.0 0.40 0 -0 0</pose> -->
-          <pose>8.0 8.0 0.755 0 -0 0</pose>
-        </include>
-    </model>
-
-    <!-- THE LAND BASE MODEL 2 -->
-    <model name="suspended_landing_platform_2">
-        <include>
-          <uri>model://suspended_landing_platform</uri>
-          <pose>5.0 2.0 0.755 0 -0 0</pose>
-        </include>
-    </model>
-
-
-    <!-- THE LAND BASE MODEL 1 -->
-    <model name="landing_platform_1">
-      <include>
-        <uri>model://landing_platform</uri>
-        <pose>4 5 0.005 0 -0 0</pose>
-      </include>
-    </model>
-
-    <!-- THE LAND BASE MODEL 2 -->
-    <model name="landing_platform_2">
-        <include>
-          <uri>model://landing_platform</uri>
-          <pose>6 7 0.005 0 -0 0</pose>
-        </include>
-    </model>
-    
-    <!-- THE LAND BASE MODEL 3 -->
-    <model name="landing_platform_3">
-      <include>
-        <uri>model://landing_platform</uri>
-        <pose>2 3 0.005 0 -0 0</pose>
-      </include>
-    </model>
-   
     <!-- THE VOID (for spawning objects out of camera view) {-->
     <model name='the_void'>
       <static>1</static>
       <link name='link'>
-        <pose>0 0 0.1 0 -0 0</pose>
+        <pose frame=''>0 0 0.1 0 -0 0</pose>
         <visual name='the_void'>
-          <pose>0 0 2 0 -0 0</pose>
+          <pose frame=''>0 0 2 0 -0 0</pose>
           <geometry>
             <sphere>
               <radius>0.25</radius>
             </sphere>
           </geometry>
           <material>
-            <!-- <script>
+            <script>
               <uri>file://media/materials/scripts/Gazebo.material</uri>
               <name>Gazebo/Black</name>
-            </script> -->
+            </script>
           </material>
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-1000 -1000 0 0 0 0</pose>
+      <pose frame=''>-1000 -1000 0 0 0 0</pose>
     </model>
+    <!--}-->
+
+    <!-- GUI frame synchronization {-->
+    <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so">
+      <target_frame_id>gazebo_user_camera</target_frame_id>
+      <world_origin_frame_id>uav1/gps_origin</world_origin_frame_id>
+      <frame_to_follow>uav1</frame_to_follow>
+    </plugin>
     <!--}-->
 
     <!-- user camera {-->
@@ -194,5 +142,65 @@
       </camera>
     </gui>
     <!--}-->
+
+
+    <!-- Models Worlds -->
+
+    <!-- THE ARENA MODEL -->
+    <model name="Arena">
+      <include>
+        <uri>model://arena_spawn</uri>
+        <!-- Pose ( x y z r p y ) -->
+        <pose>1 1 0.001 0 -0 0</pose>
+      </include>
+    </model>
+
+    <!-- THE BANNER MODEL -->
+    <model name="banner">
+      <include>
+        <uri>model://banner</uri>
+        <pose>1.0 -0.6 0.29 3.14 -0 1.57</pose>
+      </include>
+    </model>
+
+    <!-- THE SUSPENDED LANDING PLATFORM MODEL -->
+    <model name="suspended_landing_platform_1">
+      <include>
+        <uri>model://suspended_landing_platform</uri>
+        <pose>8.0 8.0 1.00 0 -0 0</pose>
+        <!-- <pose>8.0 8.0 0.755 0 -0 0</pose> -->
+      </include>
+    </model>
+
+    <model name="suspended_landing_platform_2">
+      <include>
+        <uri>model://suspended_landing_platform</uri>
+        <pose>5.0 2.0 1.505 0 -0 0</pose>
+      </include>
+    </model>
+
+    <!-- THE LANDING PLATFORM MODEL-->
+    <model name="landing_platform_1">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4 5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_2">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6 7 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_3">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>2 3 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+
   </world>
 </sdf>
