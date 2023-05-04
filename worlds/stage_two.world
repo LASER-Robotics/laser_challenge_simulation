@@ -53,18 +53,18 @@
     <!--}-->
 
     <!-- sun {-->
-    <light name='sun' type='directional'>
-      <pose frame=''>0 0 1000 0.4 0.2 0</pose>
-      <diffuse>0.7 0.7 0.7 1</diffuse>
-      <specular>0.3 0.3 0.3 1</specular>
-      <direction>0.1 0.1 -0.9</direction>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>250 250 600 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
       <attenuation>
-        <range>20</range>
-        <constant>0.5</constant>
+        <range>1000</range>
+        <constant>0.9</constant>
         <linear>0.01</linear>
         <quadratic>0.001</quadratic>
       </attenuation>
-      <cast_shadows>1</cast_shadows>
+      <direction>0 0 -1</direction>
     </light>
     <!--}-->
 
