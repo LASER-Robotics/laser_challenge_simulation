@@ -5,12 +5,12 @@
       <inertial>
         <mass>1</mass>
         <inertia>
-          <ixx>0.166667</ixx>
-          <ixy>0</ixy>
+          <ixx>0.09318</ixx>
+          <ixy>0.0</ixy>
           <ixz>0</ixz>
-          <iyy>0.166667</iyy>
+          <iyy>0.09318</iyy>
           <iyz>0</iyz>
-          <izz>0.166667</izz>
+          <izz>0.18634</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -86,7 +86,7 @@
         </contact>
       </surface>
     </link>
-    <static>1</static>
+    <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>
