@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='landing_platform'>
-    <link name='link_landing_platform'>
+  <model name='landing_platform_movel'>
+    <link name='link_landing_platform_movel'>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -86,7 +86,7 @@
         </contact>
       </surface>
     </link>
-    <static>1</static>
+    <static>0</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>
