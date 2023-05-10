@@ -2,13 +2,6 @@
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version="1.5">
   <world name="default">
-    <plugin name="mrs_gazebo_link_attacher_plugin" filename="libMRSGazeboLinkAttacherPlugin.so"
-    />
-
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin"
-      filename="libMRSGazeboStaticTransformRepublisher.so"
-    />
-
     <!-- coordinate system {-->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
@@ -136,9 +129,24 @@
     </model>
     <!--}-->
 
+
+    <!-- user camera {-->
+    <gui>
+      <camera name="camera">
+        <pose>-4 -4 7 0 0.4 0.89</pose>
+      </camera>
+    </gui>
+    <!--}-->
+
     <!-- gripper plugin  {-->
     <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
     <!-- } -->
+
+    <!-- gazebo plugin  {-->
+    <plugin name="mrs_gazebo_static_transform_republisher_plugin"
+      filename="libMRSGazeboStaticTransformRepublisher.so" />
+    <!-- } -->
+
     <!-- GUI frame synchronization {-->
     <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so">
       <target_frame_id>gazebo_user_camera</target_frame_id>
@@ -147,22 +155,23 @@
     </plugin>
     <!--}-->
 
-    <!-- user camera {-->
-    <gui>
-      <camera name="camera">
-        <pose>-60 -100 30 0 0.4 0.89</pose>
-      </camera>
-    </gui>
-    <!--}-->
 
     <!-- Models Worlds -->
 
     <!-- THE ARENA MODEL -->
-    <model name="Arena">
+    <model name="arena">
       <include>
         <uri>model://arena_spawn</uri>
         <!-- Pose ( x y z r p y ) -->
         <pose>1 1 0.001 0 -0 0</pose>
+      </include>
+    </model>
+
+    <!-- THE TAKEOFF PLATFORM MODEL -->
+    <model name="takeoff_platform">
+      <include>
+        <uri>model://takeoff_platform</uri>
+        <pose>8.0 2.2 0.0 0.0 -0.0 0.0</pose>
       </include>
     </model>
 
@@ -194,21 +203,21 @@
     <model name="landing_platform_1">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>4 5 0.005 0 -0 0</pose>
+        <pose>4 5 0.01 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_2">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>6 7 0.005 0 -0 0</pose>
+        <pose>6 7 0.01 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_3">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2 3 0.005 0 -0 0</pose>
+        <pose>2 3 0.01 0 -0 0</pose>
       </include>
     </model>
 
@@ -217,21 +226,21 @@
     <include>
       <uri>model://qrcode_box_a</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>4 5 0.01 0 -0 0</pose>
+      <pose frame=''>4 5 0.015 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT B MODEL -->
     <include>
       <uri>model://qrcode_box_b</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>6 7 0.01 0 -0 0</pose>
+      <pose frame=''>6 7 0.015 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT C MODEL -->
     <include>
       <uri>model://qrcode_box_c</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>2 3 0.01 0 -0 0</pose>
+      <pose frame=''>2 3 0.015 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT D MODEL -->

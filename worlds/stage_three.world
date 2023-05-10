@@ -4,8 +4,7 @@
   <world name="default">
     <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin"
     filename="libmrs_gazebo_ros_link_attacher.so"/> -->
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin"
-      filename="libMRSGazeboStaticTransformRepublisher.so" />
+
 
     <!-- coordinate system {-->
     <spherical_coordinates>
@@ -137,7 +136,7 @@
     <!-- user camera {-->
     <gui>
       <camera name="camera">
-        <pose>-60 -100 30 0 0.4 0.89</pose>
+        <pose>-4 -4 7 0 0.4 0.89</pose>
       </camera>
     </gui>
     <!--}-->
@@ -145,6 +144,12 @@
     <!-- gripper plugin  {-->
     <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
     <!-- } -->
+
+    <!-- gazebo plugin  {-->
+    <plugin name="mrs_gazebo_static_transform_republisher_plugin"
+      filename="libMRSGazeboStaticTransformRepublisher.so" />
+    <!-- } -->
+
     <!-- GUI frame synchronization {-->
     <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so">
       <target_frame_id>gazebo_user_camera</target_frame_id>
@@ -156,11 +161,19 @@
     <!-- Models Worlds -->
 
     <!-- THE ARENA MODEL -->
-    <model name="Arena">
+    <model name="arena">
       <include>
         <uri>model://arena_spawn</uri>
         <!-- Pose ( x y z r p y ) -->
         <pose>1 1 0.001 0 -0 0</pose>
+      </include>
+    </model>
+
+    <!-- THE TAKEOFF PLATFORM MODEL -->
+    <model name="takeoff_platform">
+      <include>
+        <uri>model://takeoff_platform</uri>
+        <pose>8.0 2.2 0.0 0.0 -0.0 0.0</pose>
       </include>
     </model>
 
