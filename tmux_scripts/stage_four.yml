@@ -1,0 +1,61 @@
+name: simulation
+root: ./
+startup_window: status
+pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=x500; export ODOMETRY_TYPE=hector; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
+windows:
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - gazebo:
+      layout: tiled
+      panes:
+        # - waitForRos; roslaunch laser_challenge_simulation challenge_world.launch challenge_stage:=stage_one
+        # - waitForRos; roslaunch laser_challenge_simulation challenge_world.launch challenge_stage:=stage_two
+        # - waitForRos; roslaunch laser_challenge_simulation challenge_world.launch challenge_stage:=stage_three
+        # - waitForRos; roslaunch laser_challenge_simulation challenge_world.launch challenge_stage:=stage_four
+        - waitForRos; roslaunch laser_challenge_simulation stage_four.launch
+  - status:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch mrs_uav_status status.launch
+  - spawn:
+      layout: tiled
+      panes:
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera --enable-realsense-down --enable-ground-truth --enable-realsense-front --enable-rplidar --pos_file `pwd`/pos.yaml"
+        # - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera --enable-realsense-down --enable-rplidar --pos_file `pwd`/pos.yaml"
+  # - hector_slam:
+  #     layout: tiled
+  #     panes:
+  #       - waitForOdometry; roslaunch mrs_uav_general hector_slam.launch
+  - bumper:
+      layout: tiled
+      panes:
+        - waitForOdometry; roslaunch mrs_bumper bumper.launch
+  - control:
+      layout: tiled
+      panes:
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_uav_manager:=./custom_configs/uav_manager.yaml
+  - takeoff:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - 'waitForControl;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
+          sleep 2;
+          rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
+  # - goto:
+  #     layout: tiled
+  #     panes:
+  #       - 'history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[0.0, 10.0, 1.5, 0.0\]\"'
+  # - rviz:
+  #     layout: tiled
+  #     panes:
+  #       - waitForControl; roslaunch mrs_uav_testing rviz.launch
+  #       - waitForControl; roslaunch mrs_rviz_plugins load_robot.launch
+  # - grip:
+  #     layout: even-vertical
+  #     panes:
+  #       - 'waitForControl; roslaunch controller_g ControllerG.launch'
+  #       - 'history -s rosservice call /uav1/control_manager/controller_gripper'
+ 
