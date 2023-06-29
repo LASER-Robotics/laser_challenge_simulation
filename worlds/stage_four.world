@@ -5,8 +5,8 @@
     <!-- coordinate system {-->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>37.411802</latitude_deg>
-      <longitude_deg>-121.995739</longitude_deg>
+      <latitude_deg>-7.162956</latitude_deg>
+      <longitude_deg>-34.816714</longitude_deg>
       <elevation>0.0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
@@ -14,50 +14,29 @@
 
     <!-- physics engine {-->
     <physics name="default_physics" default="0" type="ode">
-      <gravity>0 0 -9.8066</gravity>
       <real_time_update_rate>1000</real_time_update_rate>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
+      <gravity>0 0 -9.8066</gravity>
       <ode>
         <solver>
           <type>quick</type>
-          <iters>150</iters>
+          <iters>10</iters>
           <sor>1.3</sor>
           <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
         </solver>
-        <constraints> 
+        <constraints>
           <cfm>0</cfm>
           <erp>0.2</erp>
-          <contact_max_correcting_vel>2000</contact_max_correcting_vel>
-          <contact_surface_layer>0.01</contact_surface_layer>
+          <contact_max_correcting_vel>1000</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
         </constraints>
-      </ode>
+      </ode>     
       <magnetic_field>6.0e-06 2.3e-05 -4.2e-05</magnetic_field>
     </physics>
     <!--}-->
 
-    <!-- <physics type="ode">
-      <real_time_update_rate>1000.0</real_time_update_rate>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <ode>
-        <solver>
-          <type>quick</type>
-          <iters>150</iters>
-          <precon_iters>0</precon_iters>
-          <sor>1.400000</sor>
-          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
-        </solver>
-        <constraints>
-          <cfm>0.00001</cfm>
-          <erp>0.2</erp>
-          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
-          <contact_surface_layer>0.01000</contact_surface_layer>
-        </constraints>
-      </ode>
-    </physics> -->
-
-    <!-- turn off shadows {-->
+    <!-- setup shadows {-->
     <scene>
       <shadows>false</shadows>
       <sky>
@@ -111,17 +90,10 @@
               <uri>file://grass_plane/meshes/grass_plane.dae</uri>
             </mesh>
           </geometry>
-          <!-- <material> -->
-          <!--   <script> -->
-          <!--     <uri>file://media/materials/scripts/Gazebo.material</uri> -->
-          <!--     <name>Gazebo/Grass</name> -->
-          <!--   </script> -->
-          <!-- </material> -->
         </visual>
       </link>
     </model>
     <!--}-->
-
 
     <!-- THE VOID (for spawning objects out of camera view) {-->
     <model name='the_void'>
@@ -136,10 +108,10 @@
             </sphere>
           </geometry>
           <material>
-            <!-- <script>
+            <script>
               <uri>file://media/materials/scripts/Gazebo.material</uri>
               <name>Gazebo/Black</name>
-            </script> -->
+            </script>
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -149,7 +121,6 @@
       <pose frame=''>-1000 -1000 0 0 0 0</pose>
     </model>
     <!--}-->
-
 
     <!-- user camera {-->
     <gui>
@@ -172,7 +143,7 @@
     <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so">
       <target_frame_id>gazebo_user_camera</target_frame_id>
       <world_origin_frame_id>uav1/gps_origin</world_origin_frame_id>
-      <frame_to_follow>uav1::base_link</frame_to_follow>
+      <frame_to_follow>uav1</frame_to_follow>
     </plugin>
     <!--}-->
 

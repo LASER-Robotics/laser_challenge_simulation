@@ -1,0 +1,18 @@
+<launch>
+    <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="x_pos" default="5.0"/>
+    <arg name="y_pos" default="5.0"/>
+    <arg name="z_pos" default="0.5"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find laser_challenge_simulation)/urdf/turtlebot3_burger_stage_four.urdf.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
+    <rosparam command="load" file="$(find laser_challenge_simulation)/config/trajectory_eight.yaml"/>
+
+    <node name="trajectory" type="trajectory" pkg="homework2">
+        <param name="~pub_freq" value="50"/>
+    </node>
+
+    <node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher"/>
+</launch>
