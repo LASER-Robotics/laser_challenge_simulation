@@ -30,4 +30,7 @@ Dependencies:
 - [install turtlebot3 (ROS NOETIC)](https://automaticaddison.com/how-to-launch-the-turtlebot3-simulation-with-ros/) (build and source)
 - download and build the [turtlebot3 figure eight package](https://github.com/ctsaitsao/turtlebot3-figure-eight)
 - make sure to source and build the packages in the right order to get a proper [ros workspace chain](https://answers.ros.org/question/283343/how-do-i-prevent-workspace-chaining/)
-- run the test code ``roslaunch laser_challenge_simulation stage_four.launch``
+- run the test code:
+
+        roscd laser_challenge_simulation/tmux_scripts/stage_four
+        ./start
