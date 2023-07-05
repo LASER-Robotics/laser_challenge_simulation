@@ -12,7 +12,7 @@
   <arg name="reset" default="true" />
 
     <!-- supply this argument to specify the world name within the mrs_gazebo_common_resources package -->
-  <arg name="world_name" default="stage_one" />
+  <arg name="world_name" default="stage_four" />
 
     <!-- supply this argument to specity a world file from outside of the mrs_gazebo_common_resources package -->
   <arg name="world_file" default="$(find laser_challenge_simulation)/worlds/$(arg world_name).world" />

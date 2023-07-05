@@ -10,7 +10,7 @@ windows:
   - gazebo:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=stage_four gui:=true
+        - waitForRos; roslaunch laser_challenge_simulation stage_four.launch world_name:=stage_four gui:=true
         - waitForOdometry; gz camera -c gzclient_camera -f ${UAV_NAME}; history -s gz camera -c gzclient_camera -f ${UAV_NAME}
   - status:
       layout: tiled

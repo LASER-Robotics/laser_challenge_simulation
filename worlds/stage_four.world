@@ -5,8 +5,8 @@
     <!-- coordinate system {-->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>-7.162956</latitude_deg>
-      <longitude_deg>-34.816714</longitude_deg>
+      <latitude_deg>47.397743</latitude_deg>
+      <longitude_deg>8.545594</longitude_deg>
       <elevation>0.0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
@@ -14,9 +14,6 @@
 
     <!-- physics engine {-->
     <physics name="default_physics" default="0" type="ode">
-      <real_time_update_rate>1000</real_time_update_rate>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
       <gravity>0 0 -9.8066</gravity>
       <ode>
         <solver>
@@ -31,7 +28,10 @@
           <contact_max_correcting_vel>1000</contact_max_correcting_vel>
           <contact_surface_layer>0.001</contact_surface_layer>
         </constraints>
-      </ode>     
+      </ode>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
       <magnetic_field>6.0e-06 2.3e-05 -4.2e-05</magnetic_field>
     </physics>
     <!--}-->
