@@ -67,20 +67,65 @@
 
   <!-- Suspended Platform -->
 
+  <node name="spawn_suspended_landing_platform" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform -x -1.5 -y 0 -z 1.5"></node>
+
+  <node name="spawn_suspended_landing_platform_0" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_0 -x 1.5 -y 0 -z 1.0"></node>
+
   <node name="spawn_suspended_landing_platform_1" pkg="gazebo_ros" type="spawn_model"
     output="screen"
     args="-sdf 
-    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_1 -x -1.5 -y 0 -z 1.5"></node>
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_1 -x 0 -y -1 -z 0.10"></node>
 
   <node name="spawn_suspended_landing_platform_2" pkg="gazebo_ros" type="spawn_model"
     output="screen"
     args="-sdf 
-    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_2 -x 1.5 -y 0 -z 1.0"></node>
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_2 -x 0 -y -2 -z 0.10"></node>
 
   <node name="spawn_suspended_landing_platform_3" pkg="gazebo_ros" type="spawn_model"
     output="screen"
     args="-sdf 
-    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_3 -x 0 -y -1 -z 0.10"></node>
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_3 -x 0 -y -3 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_4" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_4 -x 0 -y -4 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_5" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_5 -x 0 -y -5 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_6" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_6 -x 0 -y -6 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_7" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_7 -x 0 -y -7 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_8" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_8 -x 0 -y -8 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_9" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_9 -x 0 -y -9 -z 0.10"></node>
+
+  <node name="spawn_suspended_landing_platform_10" pkg="gazebo_ros" type="spawn_model"
+    output="screen"
+    args="-sdf 
+    -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_10 -x 0 -y -10 -z 0.10"></node>
 
   <!-- BOX QRCODE -->
 

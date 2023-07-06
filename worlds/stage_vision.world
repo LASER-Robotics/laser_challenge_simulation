@@ -27,11 +27,12 @@
           <sor>1.3</sor>
           <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
         </solver>
-        <constraints>z <cfm>0</cfm>
+        <constraints>
+          <cfm>0</cfm>
           <erp>0.2</erp>
           <contact_max_correcting_vel>1000</contact_max_correcting_vel>
           <contact_surface_layer>
-          0.001</contact_surface_layer>
+            0.001</contact_surface_layer>
         </constraints>
       </ode>
       <max_step_size>0.004</max_step_size>
@@ -94,13 +95,17 @@
             <mesh>
               <uri>file://grass_plane/meshes/grass_plane.dae</uri>
             </mesh>
+            <plane>
+              <normal> 0 0 1</normal>
+            </plane>
           </geometry>
-          <!-- <material> -->
-          <!--   <script> -->
-          <!--     <uri>file://media/materials/scripts/Gazebo.material</uri> -->
-          <!--     <name>Gazebo/Grass</name> -->
-          <!--   </script> -->
-          <!-- </material> -->
+
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/Gazebo.material</uri>
+              <name>Gazebo/Grass</name>
+            </script>
+          </material>
         </visual>
       </link>
     </model>
