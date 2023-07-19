@@ -14,6 +14,8 @@
     <!-- supply this argument to specify the world name within the mrs_gazebo_common_resources package -->
   <arg name="world_name" default="stage_four" />
 
+  <rosparam command="load" file="$(find laser_challenge_simulation)/config/stage_four.yaml"/>
+
     <!-- supply this argument to specity a world file from outside of the mrs_gazebo_common_resources package -->
   <arg name="world_file" default="$(find laser_challenge_simulation)/worlds/$(arg world_name).world" />
 

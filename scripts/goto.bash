@@ -1,0 +1,1 @@
+rosservice call /$UAV_NAME/control_manager/goto \"goal: \[5.0, 5.0, 3.0, 0.0\]\"

@@ -35,18 +35,23 @@ windows:
   - goto:
       layout: tiled
       panes:
-        - 'history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[0.0, 10.0, 1.5, 0.0\]\"'
-  - rviz:
+        - 'waitForControl; sleep 20; rosservice call /$UAV_NAME/control_manager/goto "goal: [5.0, 5.0, 2.0, 3.1415]"'
+  - lp_detection:
       layout: tiled
       panes:
-        - waitForControl; roslaunch mrs_uav_testing rviz_random_simulation.launch
-        - waitForControl; roslaunch mrs_rviz_plugins load_robot.launch
-  - easy_control:
-      layout: tiled
-      panes:
-        - waitForControl; waitForControl; roslaunch mrs_uav_general logitech_joystick.launch
-        - waitForControl; waitForControl; roslaunch mrs_rviz_plugins rviz_interface.launch
-  - layout:
-      layout: tiled
-      panes:
-        - waitForControl; sleep 3; ~/.i3/layout_manager.sh ./layout.json
+        - waitForControl; roslaunch laser_vision lp_detector.launch
+        - waitForControl; sleep 25; python ../../scripts/base_following.py
+  # - rviz:
+  #     layout: tiled
+  #     panes:
+  #       - waitForControl; roslaunch mrs_uav_testing rviz_random_simulation.launch
+  #       - waitForControl; roslaunch mrs_rviz_plugins load_robot.launch
+  # - easy_control:
+  #     layout: tiled
+  #     panes:
+  #       - waitForControl; waitForControl; roslaunch mrs_uav_general logitech_joystick.launch
+  #       - waitForControl; waitForControl; roslaunch mrs_rviz_plugins rviz_interface.launch
+  # - layout:
+  #     layout: tiled
+  #     panes:
+  #       - waitForControl; sleep 3; ~/.i3/layout_manager.sh ./layout.json
