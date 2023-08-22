@@ -171,10 +171,18 @@
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>1.0 -0.6 0.29 3.14 -0 1.57</pose>
+        <pose>1.0 -0.6 -0.06 3.14 -0 1.57</pose>
       </include>
     </model>
 
+    <!-- THE BANNER MODEL -->
+    <model name="banner_2">
+      <include>
+        <uri>model://banner</uri>
+        <pose>-0.55 9.0 -0.06 3.14 -0 0.0</pose>
+      </include>
+    </model>
+    
     <!-- THE SUSPENDED LANDING PLATFORM MODEL -->
     <model name="suspended_landing_platform_1">
       <include>
