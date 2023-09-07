@@ -2,8 +2,7 @@
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version="1.5">
   <world name="default">
-    <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin"
-    filename="libmrs_gazebo_ros_link_attacher.so"/> -->
+    <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin" filename="libmrs_gazebo_ros_link_attacher.so"/> -->
 
 
     <!-- coordinate system {-->
@@ -30,7 +29,7 @@
           <erp>0.2</erp>
           <contact_max_correcting_vel>1000</contact_max_correcting_vel>
           <contact_surface_layer>
-          0.001</contact_surface_layer>
+            0.001</contact_surface_layer>
         </constraints>
       </ode>
       <max_step_size>0.004</max_step_size>
@@ -95,10 +94,10 @@
             </mesh>
           </geometry>
           <!-- <material> -->
-          <!--   <script> -->
-          <!--     <uri>file://media/materials/scripts/Gazebo.material</uri> -->
-          <!--     <name>Gazebo/Grass</name> -->
-          <!--   </script> -->
+          <!-- <script> -->
+          <!-- <uri>file://media/materials/scripts/Gazebo.material</uri> -->
+          <!-- <name>Gazebo/Grass</name> -->
+          <!-- </script> -->
           <!-- </material> -->
         </visual>
       </link>
@@ -119,10 +118,7 @@
             </sphere>
           </geometry>
           <material>
-            <!-- <script>
-              <uri>file://media/materials/scripts/Gazebo.material</uri>
-              <name>Gazebo/Black</name>
-            </script> -->
+            <!-- <script> <uri>file://media/materials/scripts/Gazebo.material</uri> <name>Gazebo/Black</name> </script> -->
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -141,11 +137,11 @@
     </gui>
     <!--}-->
 
-    <!-- gripper plugin  {-->
+    <!-- gripper plugin {-->
     <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
     <!-- } -->
 
-    <!-- gazebo plugin  {-->
+    <!-- gazebo plugin {-->
     <plugin name="mrs_gazebo_static_transform_republisher_plugin"
       filename="libMRSGazeboStaticTransformRepublisher.so" />
     <!-- } -->
@@ -181,9 +177,18 @@
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>1.0 -0.6 0.29 3.14 -0 1.57</pose>
+        <pose>1.0 -0.6 -0.06 3.14 -0 1.57</pose>
       </include>
     </model>
+
+    <!-- THE BANNER MODEL -->
+    <model name="banner_2">
+      <include>
+        <uri>model://banner</uri>
+        <pose>-0.55 9.0 -0.06 3.14 -0 0.0</pose>
+      </include>
+    </model>
+
 
     <!-- THE BARCODE SHELF -->
     <model name="barcodeshelf">
