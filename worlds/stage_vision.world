@@ -2,8 +2,7 @@
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version="1.5">
   <world name="default">
-    <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin"
-    filename="libmrs_gazebo_ros_link_attacher.so"/> -->
+    <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin" filename="libmrs_gazebo_ros_link_attacher.so"/> -->
     <plugin name="mrs_gazebo_static_transform_republisher_plugin"
       filename="libMRSGazeboStaticTransformRepublisher.so" />
 
@@ -99,13 +98,7 @@
               <normal> 0 0 1</normal>
             </plane>
           </geometry>
-
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/Gazebo.material</uri>
-              <name>Gazebo/Grass</name>
-            </script>
-          </material>
+          <!-- <material> <script> <uri>file://media/materials/scripts/Gazebo.material</uri> <name>Gazebo/Grass</name> </script> </material> -->
         </visual>
       </link>
     </model>
@@ -125,10 +118,7 @@
             </sphere>
           </geometry>
           <material>
-            <!-- <script>
-              <uri>file://media/materials/scripts/Gazebo.material</uri>
-              <name>Gazebo/Black</name>
-            </script> -->
+            <!-- <script> <uri>file://media/materials/scripts/Gazebo.material</uri> <name>Gazebo/Black</name> </script> -->
           </material>
         </visual>
         <self_collide>0</self_collide>
@@ -147,7 +137,7 @@
     </gui>
     <!--}-->
 
-    <!-- gripper plugin  {-->
+    <!-- gripper plugin {-->
     <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
     <!-- } -->
     <!-- GUI frame synchronization {-->
