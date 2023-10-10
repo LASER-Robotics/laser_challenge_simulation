@@ -193,7 +193,7 @@
     <model name="suspended_landing_platform_1">
       <include>
         <uri>model://suspended_landing_platform</uri>
-        <pose>8.0 8.0 1.00 0 -0 0</pose>
+        <pose>8.0 8.2 1.00 0 -0 0</pose>
         <!-- <pose>8.0 8.0 0.755 0 -0 0</pose> -->
       </include>
     </model>
@@ -201,7 +201,7 @@
     <model name="suspended_landing_platform_2">
       <include>
         <uri>model://suspended_landing_platform</uri>
-        <pose>5.0 2.0 1.505 0 -0 0</pose>
+        <pose>5.0 2.2 1.505 0 -0 0</pose>
       </include>
     </model>
 
@@ -209,21 +209,21 @@
     <model name="landing_platform_1">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>4 5 0.01 0 -0 0</pose>
+        <pose>4.75 5.7 0.01 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_2">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>6 7 0.01 0 -0 0</pose>
+        <pose>6.75 7.7 0.01 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_3">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2 3 0.01 0 -0 0</pose>
+        <pose>2.75 3.7 0.01 0 -0 0</pose>
       </include>
     </model>
 
@@ -232,35 +232,35 @@
     <include>
       <uri>model://qrcode_box_a</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>4 5 0.015 0 -0 0</pose>
+      <pose frame=''>2.75 3.7 0.01 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT B MODEL -->
     <include>
       <uri>model://qrcode_box_b</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>6 7 0.015 0 -0 0</pose>
+      <pose frame=''>6.75 7.7 0.01 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT C MODEL -->
     <include>
       <uri>model://qrcode_box_c</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>2 3 0.015 0 -0 0</pose>
+      <pose frame=''>4.75 5.7 0.01 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT D MODEL -->
     <include>
       <uri>model://qrcode_box_d</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>5.0 2.0 1.67 0 -0 0</pose>
+      <pose frame=''>5.0 2.2 1.67 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT E MODEL -->
     <include>
       <uri>model://qrcode_box_e</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>8 8 1.17 0 -0 0</pose>
+      <pose frame=''>8.0 8.2 1.17 0 -0 0</pose>
     </include>
 
 
