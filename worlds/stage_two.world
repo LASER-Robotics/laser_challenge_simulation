@@ -209,21 +209,21 @@
     <model name="landing_platform_1">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>4.75 5.7 0.01 0 -0 0</pose>
+        <pose>3.2 2.8 0.01 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_2">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>6.75 7.7 0.01 0 -0 0</pose>
+        <pose>4.3 7.3 0.01 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_3">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2.75 3.7 0.01 0 -0 0</pose>
+        <pose>6.4 5.7 0.01 0 -0 0</pose>
       </include>
     </model>
 
@@ -232,21 +232,21 @@
     <include>
       <uri>model://qrcode_box_a</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>2.75 3.7 0.01 0 -0 0</pose>
+      <pose frame=''>3.2 2.8 0.01 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT B MODEL -->
     <include>
       <uri>model://qrcode_box_b</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>6.75 7.7 0.01 0 -0 0</pose>
+       <pose frame=''>4.3 7.3 0.01 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT C MODEL -->
     <include>
       <uri>model://qrcode_box_c</uri>
       <!-- Pose ( x y z r p y ) -->
-      <pose frame=''>4.75 5.7 0.01 0 -0 0</pose>
+      <pose frame=''>6.4 5.7 0.01 0 -0 0</pose>
     </include>
 
     <!-- THE EQUIPMENT D MODEL -->

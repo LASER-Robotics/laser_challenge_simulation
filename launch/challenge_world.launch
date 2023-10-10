@@ -11,8 +11,8 @@
   <arg name="reset" default="true" />
 
   <!-- supply this argument to specify the world name within the worlds folder -->
-  <arg name="challenge_stage" default="stage_one" />
-  <arg name="world_file"
+    <arg name="challenge_stage" default="stage_two" />
+    <arg name="world_file"
     default="$(find laser_challenge_simulation)/worlds/$(arg challenge_stage).world" />
 
   <!-- set use_sim_time flag -->
