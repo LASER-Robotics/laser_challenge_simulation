@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <uri>model://banner/meshes/banner.obj</uri>
-            <scale>1.2 1.2 1.2</scale>
+            <scale>1.0 1.0 1.0</scale>
           </mesh>
         </geometry>
         <transparency>0</transparency>
@@ -32,7 +32,7 @@
         <geometry>
           <mesh>
             <uri>model://banner/meshes/banner.obj</uri>
-            <scale>1.2 1.2 1.2</scale>
+            <scale>1.0 1.0 1.0</scale>
           </mesh>
         </geometry>
       </collision>

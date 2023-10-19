@@ -35,8 +35,8 @@
 
     <group if="$(eval arg('challenge_stage') == 'stage_four')">
       <include file="$(find robot_description)/launch/spawn.launch">
-        <arg name="x" value="5" />
-        <arg name="y" value="5" />
+        <arg name="x" value="3.25" />
+        <arg name="y" value="-3" />
         <arg name="set_sensor_camera" value="false" />
         <arg name="set_sensor_rplidar" value="false" />
       </include>

@@ -129,18 +129,6 @@
     </model>
     <!--}-->
 
-    <!-- user camera {-->
-    <gui>
-      <camera name="camera">
-        <pose>-4 -4 7 0 0.4 0.89</pose>
-      </camera>
-    </gui>
-    <!--}-->
-
-    <!-- gripper plugin {-->
-    <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
-    <!-- } -->
-
     <!-- gazebo plugin {-->
     <plugin name="mrs_gazebo_static_transform_republisher_plugin"
       filename="libMRSGazeboStaticTransformRepublisher.so" />
@@ -154,6 +142,14 @@
     </plugin>
     <!--}-->
 
+<!-- user camera {-->
+    <gui>
+      <camera name="camera">
+        <pose>15 2 10 0 0.6 -2.64</pose>
+      </camera>
+    </gui>
+    <!--}-->
+
     <!-- Models Worlds -->
 
     <!-- THE ARENA MODEL -->
@@ -161,7 +157,7 @@
       <include>
         <uri>model://arena_spawn</uri>
         <!-- Pose ( x y z r p y ) -->
-        <pose>1 1 0.001 0 -0 0</pose>
+        <pose>-0.75 -7.0 0.001 0 -0 0</pose>
       </include>
     </model>
 
@@ -169,15 +165,15 @@
     <model name="takeoff_platform">
       <include>
         <uri>model://takeoff_platform</uri>
-        <pose>8.0 2.2 0.0 0.0 -0.0 0.0</pose>
+        <pose>0.0 0.0 0.0 0.0 -0.0 0.0</pose>
       </include>
     </model>
 
-    <!-- THE BANNER MODEL -->
+    THE BANNER MODEL
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>1.0 -0.6 -0.06 3.14 -0 1.57</pose>
+        <pose>-0.75 -7.0 0.0 0.0 0.0 0.0</pose>
       </include>
     </model>
 
@@ -185,17 +181,32 @@
     <model name="banner_2">
       <include>
         <uri>model://banner</uri>
-        <pose>-0.55 9.0 -0.06 3.14 -0 0.0</pose>
+        <pose>-0.75 1.0 0.0 0.0 0.0 -1.57</pose>
+      </include>
+    </model>
+    
+    <!-- THE SUSPENDED LANDING PLATFORM MODEL -->
+    <model name="landing_platform_A">
+      <include>
+        <uri>model://suspended_landing_platform</uri>
+        <pose>2.75 0.0 1.50 0 -0 0</pose>
+        <!-- <pose>8.0 8.0 0.755 0 -0 0</pose> -->
       </include>
     </model>
 
+    <model name="landing_platform_E">
+      <include>
+        <uri>model://suspended_landing_platform</uri>
+        <pose>0.0 -6.0 1.0 0 -0 0</pose>
+      </include>
+    </model>
 
     <!-- THE BARCODE SHELF -->
     <model name="barcodeshelf">
       <include>
         <uri>model://barcode_shelf</uri>
         <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>3.5 8.8 0.012 0 -0 -1.5707</pose>
+        <pose frame=''>5.0 -6.95 0.0 0.0 -0.0 1.57</pose>
       </include>
     </model>
 

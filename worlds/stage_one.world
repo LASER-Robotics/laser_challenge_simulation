@@ -122,18 +122,6 @@
     </model>
     <!--}-->
 
-    <!-- user camera {-->
-    <gui>
-      <camera name="camera">
-        <pose>-4 -4 7 0 0.4 0.89</pose>
-      </camera>
-    </gui>
-    <!--}-->
-
-    <!-- gripper plugin  {-->
-    <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
-    <!-- } -->
-
     <!-- gazebo plugin  {-->
     <plugin name="mrs_gazebo_static_transform_republisher_plugin"
       filename="libMRSGazeboStaticTransformRepublisher.so" />
@@ -147,6 +135,13 @@
     </plugin>
     <!--}-->
 
+    <!-- user camera {-->
+    <gui>
+      <camera name="camera">
+        <pose>15 2 10 0 0.6 -2.64</pose>
+      </camera>
+    </gui>
+    <!--}-->
 
     <!-- Models Worlds -->
 
@@ -155,7 +150,7 @@
       <include>
         <uri>model://arena_spawn</uri>
         <!-- Pose ( x y z r p y ) -->
-        <pose>1 1 0.001 0 -0 0</pose>
+        <pose>-0.75 -7.0 0.001 0 -0 0</pose>
       </include>
     </model>
 
@@ -163,15 +158,15 @@
     <model name="takeoff_platform">
       <include>
         <uri>model://takeoff_platform</uri>
-        <pose>8.0 2.2 0.0 0.0 -0.0 0.0</pose>
+        <pose>0.0 0.0 0.0 0.0 -0.0 0.0</pose>
       </include>
     </model>
 
-    <!-- THE BANNER MODEL -->
+    THE BANNER MODEL
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>1.0 -0.6 -0.06 3.14 -0 1.57</pose>
+        <pose>-0.75 -7.0 0.0 0.0 0.0 0.0</pose>
       </include>
     </model>
 
@@ -179,7 +174,7 @@
     <model name="banner_2">
       <include>
         <uri>model://banner</uri>
-        <pose>-0.55 9.0 -0.06 3.14 -0 0.0</pose>
+        <pose>-0.75 1.0 0.0 0.0 0.0 -1.57</pose>
       </include>
     </model>
     
@@ -187,7 +182,7 @@
     <model name="suspended_landing_platform_1">
       <include>
         <uri>model://suspended_landing_platform</uri>
-        <pose>8.0 8.0 1.00 0 -0 0</pose>
+        <pose>2.75 0.0 1.50 0 -0 0</pose>
         <!-- <pose>8.0 8.0 0.755 0 -0 0</pose> -->
       </include>
     </model>
@@ -195,7 +190,7 @@
     <model name="suspended_landing_platform_2">
       <include>
         <uri>model://suspended_landing_platform</uri>
-        <pose>5.0 2.0 1.505 0 -0 0</pose>
+        <pose>0.0 -6.0 1.0 0 -0 0</pose>
       </include>
     </model>
 
@@ -203,24 +198,23 @@
     <model name="landing_platform_1">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>4 5 0.005 0 -0 0</pose>
+        <pose>5 -2 0.005 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_2">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>6 7 0.005 0 -0 0</pose>
+        <pose>4 -6 0.005 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_3">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2 3 0.005 0 -0 0</pose>
+        <pose>2 -4 0.005 0 -0 0</pose>
       </include>
     </model>
-
-
+    
   </world>
 </sdf>
