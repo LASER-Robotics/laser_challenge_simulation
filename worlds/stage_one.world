@@ -178,43 +178,42 @@
       </include>
     </model>
     
-    <!-- THE SUSPENDED LANDING PLATFORM MODEL -->
-    <model name="suspended_landing_platform_1">
+    <!-- THE LANDING PLATFORM MODEL -->
+
+    <model name="landing_platform_A">
       <include>
         <uri>model://suspended_landing_platform</uri>
         <pose>2.75 0.0 1.50 0 -0 0</pose>
-        <!-- <pose>8.0 8.0 0.755 0 -0 0</pose> -->
       </include>
     </model>
 
-    <model name="suspended_landing_platform_2">
+    <model name="landing_platform_E">
       <include>
         <uri>model://suspended_landing_platform</uri>
         <pose>0.0 -6.0 1.0 0 -0 0</pose>
       </include>
     </model>
 
-    <!-- THE LANDING PLATFORM MODEL-->
-    <model name="landing_platform_1">
+    <model name="landing_platform_B">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>5 -2 0.005 0 -0 0</pose>
+        <pose>5 -1 0.005 0 -0 0</pose>
       </include>
     </model>
 
-    <model name="landing_platform_2">
+    <model name="landing_platform_C">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>4 -6 0.005 0 -0 0</pose>
+        <pose>2 -3 0.005 0 -0 0</pose>
       </include>
     </model>
 
-    <model name="landing_platform_3">
+    <model name="landing_platform_D">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2 -4 0.005 0 -0 0</pose>
+        <pose>4 -5 0.005 0 -0 0</pose>
       </include>
     </model>
-    
+
   </world>
 </sdf>
