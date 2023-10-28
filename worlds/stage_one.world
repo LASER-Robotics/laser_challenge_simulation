@@ -162,19 +162,18 @@
       </include>
     </model>
 
-    THE BANNER MODEL
+    <!-- THE BANNER MODEL -->
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>-0.75 -7.0 0.0 0.0 0.0 0.0</pose>
+        <pose>-0.75 -7.0 0.5 0.0 0.0 0.0</pose>
       </include>
     </model>
 
-    <!-- THE BANNER MODEL -->
     <model name="banner_2">
       <include>
-        <uri>model://banner</uri>
-        <pose>-0.75 1.0 0.0 0.0 0.0 -1.57</pose>
+        <uri>model://banner_2</uri>
+        <pose>-0.75 1.0 0.5 0.0 0.0 -1.57</pose>
       </include>
     </model>
     
@@ -197,23 +196,59 @@
     <model name="landing_platform_B">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>5 -1 0.005 0 -0 0</pose>
+        <pose>1.5 -0 0.005 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_C">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2 -3 0.005 0 -0 0</pose>
+        <pose>1 -5 0.005 0 -0 0</pose>
       </include>
     </model>
 
     <model name="landing_platform_D">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>4 -5 0.005 0 -0 0</pose>
+        <pose>6.5 -3 0.005 0 -0 0</pose>
       </include>
     </model>
 
+    <model name="landing_platform_1">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4 -6.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="landing_platform_2">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6.5 -6.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="landing_platform_3">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>3.0 -4 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="landing_platform_4">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6.5 -0 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="landing_platform_5">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.0 -2.0 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    <model name="landing_platform_6">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>0.0 -3 0.005 0 -0 0</pose>
+      </include>
+    </model>
   </world>
 </sdf>

@@ -182,7 +182,7 @@
     <!-- THE BANNER MODEL -->
     <model name="banner_2">
       <include>
-        <uri>model://banner</uri>
+        <uri>model://banner_2</uri>
         <pose>-0.55 9.0 -0.06 3.14 -0 0.0</pose>
       </include>
     </model>
