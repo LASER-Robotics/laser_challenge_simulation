@@ -1,32 +1,35 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version="1.5">
   <world name="default">
+    <!-- <plugin name="mrs_gazebo_link_attacher_plugin" filename="libMRSGazeboLinkAttacherPlugin.so"/> -->
+    <plugin name="mrs_gazebo_static_transform_republisher_plugin" filename="libMrsGazeboCommonResources_StaticTransformRepublisher.so"/>
+
     <!-- coordinate system {-->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>37.411802</latitude_deg>
-      <longitude_deg>-121.995739</longitude_deg>
+      <latitude_deg>47.397743</latitude_deg>
+      <longitude_deg>8.545594</longitude_deg>
       <elevation>0.0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <!--}-->
-
+    
     <!-- physics engine {-->
     <physics name="default_physics" default="0" type="ode">
       <gravity>0 0 -9.8066</gravity>
       <ode>
         <solver>
           <type>quick</type>
-          <iters>10</iters>
-          <sor>1.3</sor>
+          <iters>50</iters>
+          <sor>1.0</sor>
           <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
         </solver>
-        <constraints>z <cfm>0</cfm>
+        <constraints>
+          <cfm>0</cfm>
           <erp>0.2</erp>
           <contact_max_correcting_vel>1000</contact_max_correcting_vel>
-          <contact_surface_layer>
-            0.001</contact_surface_layer>
+          <contact_surface_layer>0.001</contact_surface_layer>
         </constraints>
       </ode>
       <max_step_size>0.004</max_step_size>
@@ -36,12 +39,12 @@
     </physics>
     <!--}-->
 
-    <!-- turn off shadows {-->
+    <!-- setup shadows {-->
     <scene>
       <shadows>false</shadows>
-      <sky>
-        <clouds />
-      </sky>
+      <!-- <sky> -->
+      <!--   <clouds/> -->
+      <!-- </sky> -->
     </scene>
     <!--}-->
 
@@ -58,7 +61,7 @@
         <quadratic>0.001</quadratic>
       </attenuation>
       <direction>0 0 -1</direction>
-    </light>
+    </light>    
     <!--}-->
 
     <!-- ground plane {-->
@@ -86,53 +89,23 @@
           <pose>0 0 0 0 0 0</pose>
           <cast_shadows>false</cast_shadows>
           <geometry>
-            <mesh>
-              <uri>file://grass_plane/meshes/grass_plane.dae</uri>
-            </mesh>
-          </geometry>
-          <!-- <material> -->
-          <!-- <script> -->
-          <!-- <uri>file://media/materials/scripts/Gazebo.material</uri> -->
-          <!-- <name>Gazebo/Grass</name> -->
-          <!-- </script> -->
-          <!-- </material> -->
-        </visual>
-      </link>
-    </model>
-    <!--}-->
-
-
-    <!-- THE VOID (for spawning objects out of camera view) {-->
-    <model name='the_void'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0.1 0 -0 0</pose>
-        <visual name='the_void'>
-          <pose frame=''>0 0 2 0 -0 0</pose>
-          <geometry>
-            <sphere>
-              <radius>0.25</radius>
-            </sphere>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>150 250</size>
+            </plane>
           </geometry>
           <material>
-            <!-- <script> <uri>file://media/materials/scripts/Gazebo.material</uri> <name>Gazebo/Black</name> </script> -->
+            <script>
+              <uri>file://media/materials/scripts/Gazebo.material</uri>
+              <name>Gazebo/Grass</name>
+            </script>
           </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
+        </visual> 
       </link>
-      <pose frame=''>-1000 -1000 0 0 0 0</pose>
     </model>
-    <!--}-->
-
-    <!-- gazebo plugin {-->
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin"
-      filename="libMRSGazeboStaticTransformRepublisher.so" />
-    <!-- } -->
 
     <!-- GUI frame synchronization {-->
-    <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMRSGazeboRvizCameraSynchronizer.so">
+    <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMrsGazeboCommonResources_RvizCameraSynchronizer.so" >
       <target_frame_id>gazebo_user_camera</target_frame_id>
       <world_origin_frame_id>uav1/gps_origin</world_origin_frame_id>
       <frame_to_follow>uav1::base_link</frame_to_follow>
@@ -170,16 +143,15 @@
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>-0.75 -7.0 0.0 0.0 0.0 0.0</pose>
+        <pose>-0.75 -7.0 0.5 0.0 0.0 0.0</pose>
       </include>
     </model>
 
-    <!-- THE BANNER MODEL -->
     <model name="banner_2">
       <include>
         <uri>model://banner_2</uri>
-        <pose>-0.75 1.0 0.0 0.0 0.0 -1.57</pose>
+        <pose>-0.75 1.0 0.5 0.0 0.0 -1.57</pose>
       </include>
-    </model>  
+    </model>
   </world>
 </sdf>
