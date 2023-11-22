@@ -50,12 +50,12 @@
 
   <!-- kill previous sessions of mavros, px4 and gazebo -->
   <group if="$(arg reset)">
-    <node pkg="mrs_simulation" type="kill_previous_session.sh" name="kill_previous_session"
+    <node pkg="mrs_uav_gazebo_simulation" type="kill_previous_session.sh" name="kill_previous_session"
       output="screen" />
   </group>
 
   <!-- start spawner -->
-  <include file="$(find mrs_simulation)/launch/mrs_drone_spawner.launch" />
+  <include file="$(find mrs_uav_gazebo_simulation)/launch/mrs_drone_spawner.launch" />
 
   <!-- start gazebo client -->
   <group if="$(arg gui)">
