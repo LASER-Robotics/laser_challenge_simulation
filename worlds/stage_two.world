@@ -178,7 +178,123 @@
         <pose frame=''>5.0 -6.95 0.0 0.0 -0.0 1.57</pose>
       </include>
     </model>
+    
+    <!-- X - 2.05 - 4.95  -->
+    <!-- Y -6.875  -->
+    <!-- X - 1.05 - 1.55 - 2.05 -2.55  -->
 
+    <model name="box_A0">
+      <include>
+        <uri>model://box_A0</uri>
+        <pose>3.97 -6.875 1.55 0 0 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_A1">
+      <include>
+        <uri>model://box_A1</uri>
+        <pose>4.79 -6.875 1.55 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_A2">
+      <include>
+        <uri>model://box_A2</uri>
+        <pose>2.93 -6.875 1.55 0 0 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_A3">
+      <include>
+        <uri>model://box_A3</uri>
+        <pose>3.87 -6.875 1.55 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_B0">
+      <include>
+        <uri>model://box_B0</uri>
+        <pose>3.45 -6.875 1.05 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_B1">
+      <include>
+        <uri>model://box_B1</uri>
+        <pose>2.42 -6.875 1.05 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_B2">
+      <include>
+        <uri>model://box_B2</uri>
+        <pose>2.53 -6.875 1.05 0 0 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_B3">
+      <include>
+        <uri>model://box_B3</uri>
+        <pose>4.95 -6.875 1.05 0 0 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_C0">
+      <include>
+        <uri>model://box_C0</uri>
+        <pose>3.45 -6.875 2.05 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_C1">
+      <include>
+        <uri>model://box_C1</uri>
+        <pose>2.10 -6.875 2.05 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_C2">
+      <include>
+        <uri>model://box_C2</uri>
+        <pose>3.55 -6.875 2.05 0 0 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_C3">
+      <include>
+        <uri>model://box_C3</uri>
+        <pose>4.0 -6.875 2.05 0 0 -0 </pose>
+      </include>
+    </model>    
+
+    <model name="box_D0">
+      <include>
+        <uri>model://box_D0</uri>
+        <pose>2.88 -6.875 2.55 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_D1">
+      <include>
+        <uri>model://box_D1</uri>
+        <pose>3.86 -6.875 2.55 0 1.57 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_D2">
+      <include>
+        <uri>model://box_D2</uri>
+        <pose>3.76 -6.875 2.55 0 0 -0 </pose>
+      </include>
+    </model>
+
+    <model name="box_D3">
+      <include>
+        <uri>model://box_D3</uri>
+        <pose>2.10 -6.875 2.55 0 0 -0 </pose>
+      </include>
+    </model>    
+        
 
   </world>
 </sdf>

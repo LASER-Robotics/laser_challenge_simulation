@@ -36,7 +36,7 @@
 
   <!-- Suspended Platform -->
 
-  <node name="spawn_suspended_landing_platform" pkg="gazebo_ros" type="spawn_model"
+  <!-- <node name="spawn_suspended_landing_platform" pkg="gazebo_ros" type="spawn_model"
     output="screen"
     args="-sdf 
     -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform -x 1.0 -y -2.0 -z 1.5"></node>
@@ -80,7 +80,7 @@
     output="screen"
     args="-sdf 
     -file $(find laser_challenge_simulation)/models/suspended_landing_platform/model.sdf -model suspended_landing_platform_8 -x 3 -y -0.0 -z 1.0"></node>
-  
+   -->
 
 
   <!-- <node name="spawn_suspended_landing_platform_0" pkg="gazebo_ros" type="spawn_model"
