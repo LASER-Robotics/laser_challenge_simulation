@@ -115,7 +115,7 @@
     <!-- user camera {-->
     <gui>
       <camera name="camera">
-        <pose>15 2 10 0 0.6 -2.64</pose>
+        <pose>15 -3 5 0 0.25 -3.14</pose>
       </camera>
     </gui>
     <!--}-->
