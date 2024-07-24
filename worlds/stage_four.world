@@ -115,7 +115,7 @@
     <!-- user camera {-->
     <gui>
       <camera name="camera">
-        <pose>15 -3 5 0 0.25 -3.14</pose>
+        <pose>15 2 10 0 0.6 -2.64</pose>
       </camera>
     </gui>
     <!--}-->
@@ -153,5 +153,50 @@
         <pose>-0.75 1.0 0.5 0.0 0.0 -1.57</pose>
       </include>
     </model>
+    
+    <!-- THE LANDING PLATFORM MODEL -->
+
+    <model name="landing_platform_A">
+      <include>
+        <uri>model://suspended_landing_platform</uri>
+        <pose>2.75 0.0 1.50 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_B">
+      <include>
+        <uri>model://suspended_landing_platform</uri>
+        <pose>0.0 -6.0 1.0 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_C">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1.5 -0 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_D">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1 -5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_E">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6.5 -3 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_F">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
   </world>
 </sdf>
