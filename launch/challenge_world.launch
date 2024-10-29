@@ -10,6 +10,11 @@
   <arg name="physics" default="ode" />
   <arg name="verbose" default="true" />
   <arg name="reset" default="true" />
+  
+  <!-- Define quais bases serão spawnadas -->
+  <arg name="bases_spawn" default="[]" />
+  <!-- <arg name="bases_spawn" default="[14, 6, 38]" /> -->
+  <!-- <arg name="bases_spawn" default="[36, 10, 25]" /> -->
 
   <arg name="LOGGER_DEBUG" default="$(optenv LOGGER_DEBUG false)" />
 
@@ -19,7 +24,7 @@
   <env if="$(arg LOGGER_DEBUG)" name="ROSCONSOLE_CONFIG_FILE" value="$(arg logger_debug_file)"/>
 
     <!-- supply this argument to specify the world name within the mrs_gazebo_common_resources package -->
-  <arg name="challenge_stage" default="forest" />
+  <arg name="challenge_stage" default="stage_one" />
 
   <!-- supply this argument to specity a world file from outside of the mrs_gazebo_common_resources package -->
   <arg name="world_file" default="$(find laser_challenge_simulation)/worlds/$(arg challenge_stage).world" />
@@ -50,7 +55,13 @@
   <!-- start gazebo server-->
   <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="false" output="screen"
         args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) -e $(arg physics) $(arg extra_gazebo_args) $(arg world_file)" />
-
+  
+  <!-- Inicia o nó do Python que faz o spawn das bases -->
+  <node pkg="laser_challenge_simulation" type="base_spawner.py" name="base_spawner" output="screen">
+      <param name="challenge_stage" value="$(arg challenge_stage)"/>
+      <param name="bases_spawn" value="$(arg bases_spawn)"/>
+  </node>
+  
   <!-- start gazebo client -->
   <group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen" />

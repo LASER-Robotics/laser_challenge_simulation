@@ -9,9 +9,12 @@
   <license>apache_license_2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  
   <depend>gazebo</depend>
   <depend>gazebo_ros</depend>
-  <depend>mrs_gazebo_common_resources</depend>
+  <depend>mrs_gazebo_common_resources</depend> 
+  <depend>rospy</depend>
+  <depend>gazebo_msgs</depend>
 
   <export>
     <!-- gazebo_ros_paths_plugin automatically adds these to

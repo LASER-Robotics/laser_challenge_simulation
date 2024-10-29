@@ -169,26 +169,271 @@
         <pose>0.0 -6.0 1.0 0 -0 0</pose>
       </include>
     </model>
-
-    <model name="landing_platform_B">
+    
+    <!-- <model name="landing_platform_1">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>3 -4 0.005 0 -0 0</pose>
+        <pose>6.5 -0.5 0.005 0 -0 0</pose>
       </include>
     </model>
 
-    <model name="landing_platform_C">
+    <model name="landing_platform_2">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>2 -2 0.005 0 -0 0</pose>
+        <pose>6.5 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_3">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6.5 -2.5 0.005 0 -0 0</pose>
       </include>
     </model>
 
-    <model name="landing_platform_D">
+    <model name="landing_platform_4">
       <include>
         <uri>model://landing_platform</uri>
-        <pose>5 -3 0.005 0 -0 0</pose>
+        <pose>6.5 -3.5 0.005 0 -0 0</pose>
       </include>
     </model>
+
+    <model name="landing_platform_5">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_6">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>6.5 -5.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_7">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 0.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_8">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 -0.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_9">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_10">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 -2.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_11">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 -3.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_12">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_13">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>5.5 -5.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_14">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 0.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_15">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 -0.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_16">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_17">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 -2.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_18">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 -3.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_19">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_20">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>4.5 -5.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_21">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>3.5 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_22">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>3.5 -2.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_23">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>3.5 -3.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_24">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>3.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_25">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>3.5 -5.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_26">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>2.5 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_27">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>2.5 -2.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_28">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>2.5 -3.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_29">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>2.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_30">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>2.5 -5.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_31">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1.5 -1.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+    
+    <model name="landing_platform_32">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1.5 -2.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_33">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1.5 -3.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_34">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_35">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>1.5 -5.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_36">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>0.5 -2.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_37">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>0.5 -3.5 0.005 0 -0 0</pose>
+      </include>
+    </model>
+
+    <model name="landing_platform_38">
+      <include>
+        <uri>model://landing_platform</uri>
+        <pose>0.5 -4.5 0.005 0 -0 0</pose>
+      </include>
+    </model> -->
   </world>
 </sdf>

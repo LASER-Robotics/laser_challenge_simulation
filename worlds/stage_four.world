@@ -170,7 +170,7 @@
       </include>
     </model>
 
-    <model name="landing_platform_C">
+    <!-- <model name="landing_platform_C">
       <include>
         <uri>model://landing_platform</uri>
         <pose>1.5 -0 0.005 0 -0 0</pose>
@@ -196,7 +196,7 @@
         <uri>model://landing_platform</uri>
         <pose>4 -1.5 0.005 0 -0 0</pose>
       </include>
-    </model>
+    </model> -->
 
   </world>
 </sdf>
