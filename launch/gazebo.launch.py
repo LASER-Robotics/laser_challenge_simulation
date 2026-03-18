@@ -65,7 +65,7 @@ def launch_setup(context: launch.LaunchContext, ld):
                 'verbose': verbose,
                 'world': PathJoinSubstitution([
                     FindPackageShare('laser_challenge_simulation'), 
-                    'worlds',  # <--- ALTERADO AQUI PARA O PLURAL (worlds)
+                    'worlds',
                     TextSubstitution(text=_world)
                 ]),
                 'params_file': gazebo_config,
@@ -83,7 +83,6 @@ def launch_setup(context: launch.LaunchContext, ld):
         )
     )
     # #}
-
 
 def generate_launch_description():
     ld = launch.LaunchDescription()
